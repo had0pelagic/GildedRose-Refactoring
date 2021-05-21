@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using csharp.Interfaces;
 
 namespace csharp.Items
-{
+{   /// <summary>
+    /// Category for items that won't change stats
+    /// Known items: "Sulfuras, Hand of Ragnaros"
+    /// </summary>
     class GoldenItem : Item, IItemActions
     {
         public GoldenItem(string name, int sellIn, int quality)
@@ -16,9 +19,6 @@ namespace csharp.Items
             Quality = quality;
         }
 
-        public void Update()
-        {
-
-        }
+        public void Update() { }
     }
 }

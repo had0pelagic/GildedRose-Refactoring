@@ -12,8 +12,12 @@ namespace csharp
             this.Items = Items;
         }
 
-        public void Update()
+        public void UpdateQuality()
         {
+            foreach (var item in Items)
+            {
+                item.Update();
+            }
         }
 
 
