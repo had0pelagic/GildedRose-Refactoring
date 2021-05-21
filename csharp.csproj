@@ -62,10 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApprovalTest.cs" />
+    <Compile Include="Items\BlackItem.cs" />
+    <Compile Include="Items\BlueItem.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
+    <Compile Include="Items\GoldenItem.cs" />
+    <Compile Include="Items\GrayItem.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="Items\Ticket.cs" />
+    <Compile Include="Interfaces\IItemActions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
