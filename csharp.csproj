@@ -61,7 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests\ApprovalTest.cs" />
     <Compile Include="Items\BlackItem.cs" />
     <Compile Include="Items\BlueItem.cs" />
     <Compile Include="MainApp\GildedRose.cs" />

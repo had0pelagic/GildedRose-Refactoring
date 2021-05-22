@@ -27,18 +27,20 @@ namespace csharp.Items
 
         void QualityUpdate()
         {
-            if (Quality > 0)
-            {
-                if (SellIn > 0 && checkLimit(2))
-                    Quality -= 2;
-                else if (SellIn <= 0 && checkLimit(4))
-                    Quality -= 4;
-            }
+            if (SellIn > 0 && IsQualityAboveLimit(2) && IsQualityAbove(0))
+                Quality -= 2;
+            else if (SellIn <= 0 && IsQualityAboveLimit(4) && IsQualityAbove(0))
+                Quality -= 4;
         }
 
-        bool checkLimit(int val)
+        bool IsQualityAboveLimit(int val)
         {
             return (Quality - val) >= 0 ? true : false;
+        }
+
+        bool IsQualityAbove(int val)
+        {
+            return Quality > val;
         }
     }
 }

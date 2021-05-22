@@ -33,21 +33,27 @@ namespace csharp.Items
         {
             if (SellIn <= 0)
                 Quality = 0;
-
-            else if (Quality < 50)
-            {
-                if (SellIn <= 10 && SellIn > 5 && ExceedLimit(2))
-                    Quality += 2;
-                else if (SellIn <= 5 && SellIn != 0 && ExceedLimit(3))
-                    Quality += 3;
-                else
-                    Quality += 1;
-            }
+            else if (IsDateInBetween(5, 0) && IsLimitAbove(3) && IsQualityLower(50))
+                Quality += 3;
+            else if (IsDateInBetween(10, 5) && IsLimitAbove(2) && IsQualityLower(50))
+                Quality += 2;
+            else if (IsQualityLower(50))
+                Quality += 1;
         }
 
-        bool ExceedLimit(int val)
+        bool IsDateInBetween(int fDay, int sDay)
         {
-            return (Quality + val) > 50 ? false : true;
+            return fDay >= SellIn && sDay < SellIn;
+        }
+
+        bool IsLimitAbove(int increase)
+        {
+            return (Quality + increase) > 50 ? false : true;
+        }
+
+        bool IsQualityLower(int val)
+        {
+            return Quality < val;
         }
     }
 }

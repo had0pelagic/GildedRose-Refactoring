@@ -24,15 +24,18 @@ namespace csharp.Items
             QualityUpdate();
             SellIn--;
         }
+
         void QualityUpdate()
         {
-            if (Quality > 0)
-            {
-                if (SellIn > 0)
-                    Quality -= 1;
-                else if (SellIn <= 0)
-                    Quality -= 2;
-            }
+            if (SellIn > 0 && IsQualityAbove(0))
+                Quality -= 1;
+            else if (SellIn <= 0 && IsQualityAbove(0))
+                Quality -= 2;
+        }
+
+        bool IsQualityAbove(int val)
+        {
+            return Quality > val;
         }
     }
 }
