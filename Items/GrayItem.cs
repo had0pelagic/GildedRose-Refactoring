@@ -21,6 +21,11 @@ namespace csharp.Items
 
         public void Update()
         {
+            QualityUpdate();
+            SellIn--;
+        }
+        void QualityUpdate()
+        {
             if (Quality > 0)
             {
                 if (SellIn > 0)
@@ -28,7 +33,6 @@ namespace csharp.Items
                 else if (SellIn <= 0)
                     Quality -= 2;
             }
-            SellIn -= 1;
         }
     }
 }

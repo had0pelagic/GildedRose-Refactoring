@@ -22,14 +22,18 @@ namespace csharp.Items
 
         public void Update()
         {
+            QualityUpdate();
+            SellIn--;
+        }
+        void QualityUpdate()
+        {
             if (Quality < 50)
             {
                 if (SellIn > 0)
                     Quality += 1;
-                else if (SellIn < 0)
+                else if (SellIn <= 0)
                     Quality += 2;
             }
-            SellIn -= 1;
         }
     }
 }

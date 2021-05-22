@@ -25,6 +25,12 @@ namespace csharp.Items
 
         public void Update()
         {
+            QualityUpdate();
+            SellIn--;
+        }
+
+        void QualityUpdate()
+        {
             if (SellIn <= 0)
                 Quality = 0;
 
@@ -37,10 +43,9 @@ namespace csharp.Items
                 else
                     Quality += 1;
             }
-            SellIn -= 1;
         }
 
-        public bool ExceedLimit(int val)
+        bool ExceedLimit(int val)
         {
             return (Quality + val) > 50 ? false : true;
         }
